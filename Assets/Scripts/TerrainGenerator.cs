@@ -25,7 +25,7 @@ public class CustomTerrainGenerator : MonoBehaviour
         terrainData.SetHeights(0, 0, GenerateHeights());
         return terrainData;
     }
-
+    
     float[,] GenerateHeights()
     {
         float[,] heights = new float[width, depth];
@@ -33,9 +33,17 @@ public class CustomTerrainGenerator : MonoBehaviour
         {
             for (int y = 0; y < depth; y++)
             {
-                float xCoord = x / width * scale;
-                float yCoord = y / depth * scale;
-                heights[x, y] = Mathf.PerlinNoise(xCoord, yCoord);
+                float xCoord = x / (float)width * scale;
+                float yCoord = y / (float)depth * scale;
+                float height = Mathf.PerlinNoise(xCoord, yCoord);
+            
+                
+                if (height > 0.4f && height < 0.6f)
+                {
+                    height = 0.5f; 
+                }
+            
+                heights[x, y] = height;
             }
         }
         return heights;
