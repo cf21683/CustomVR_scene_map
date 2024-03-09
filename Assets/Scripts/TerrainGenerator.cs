@@ -7,6 +7,9 @@ public class CustomTerrainGenerator : MonoBehaviour
     public int height = 20; 
     public float scale = 20;
     
+    public TerrainLayer grassLayer;
+    public TerrainLayer dirtLayer;
+    
 
     void Start()
     {
@@ -20,6 +23,7 @@ public class CustomTerrainGenerator : MonoBehaviour
 
     TerrainData GenerateTerrain(TerrainData terrainData)
     {
+        terrainData.terrainLayers = new TerrainLayer[] { grassLayer, dirtLayer };
         terrainData.heightmapResolution = width + 1;
         terrainData.size = new Vector3(width, height, depth);
         terrainData.SetHeights(0, 0, GenerateHeights());
