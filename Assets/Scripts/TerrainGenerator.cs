@@ -1,6 +1,7 @@
 using UnityEngine;
+using System.Collections;
 
-public class CustomTerrainGenerator : MonoBehaviour
+public class TerrainGenerator : MonoBehaviour
 {
     public int width = 256;
     public int height = 256; 
@@ -31,6 +32,8 @@ public class CustomTerrainGenerator : MonoBehaviour
         // return terrainData;
         float[,] perlinMap = PerlinNoise.GenerateMap(width, height, scale);
         
+        TerrainDisplay display = FindObjectOfType<TerrainDisplay>();
+        display.Display2DMap(perlinMap);
 
 
     }

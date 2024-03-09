@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class TerrainDisplay : MonoBehaviour
 {
-    public Render textureRender;
+    public Renderer textureRender;
 
-    public Display2DMap(float[,] map)
+    public void Display2DMap(float[,] map)
     {
-        int width = map.Getlength(0);
-        int height = map.Getlength(1);
+        int width = map.GetLength(0);
+        int height = map.GetLength(1);
         
         Texture2D mapTexture = new Texture2D (width, height);
 
@@ -17,11 +17,11 @@ public class TerrainDisplay : MonoBehaviour
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++)
             {
-                colorMap[y * width + x] = Color.lerp(Color.black, Color.White, map[x, y]);
+                colorMap[y * width + x] = Color.Lerp(Color.black, Color.white, map[x, y]);
             }
         }
 
-        mapTexture.SetPixel(colourMap);
+        mapTexture.SetPixels(colorMap);
         mapTexture.Apply();
 
         textureRender.sharedMaterial.mainTexture = mapTexture;

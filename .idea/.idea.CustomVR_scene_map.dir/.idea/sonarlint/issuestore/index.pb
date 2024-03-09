@@ -11,3 +11,7 @@ P
  Assets/Scripts/TerrainDisplay.cs,3/d/3d66479470411b818fec3bd28bd41640a4a477b4
 U
 %Assets/Scripts/TerrainDisplay.cs.meta,b/8/b820c14bd08e2d2ad609a944978f2099a8a4acdf
+X
+(Assets/Scripts/TerrainGeneratorEditor.cs,e/c/ec688b95b3be8b6bc5b45c90dcd95981220cd111
+W
+'Assets/Scripts/TerrainGenerator.cs.meta,1/b/1ba5c1d7a38e64710c4240478640ff3ac99c936f
