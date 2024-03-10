@@ -5,8 +5,9 @@ public class TerrainGenerator : MonoBehaviour
 {
     public int width = 256;
     public int height = 256; 
-    // public int height = 20; 
     public float scale = 20f;
+    
+    public bool autoUpdate;
     
     // public TerrainLayer grassLayer;
     // public TerrainLayer dirtLayer;
