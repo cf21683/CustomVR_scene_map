@@ -5,7 +5,8 @@ using UnityEngine;
 public class TerrainDisplay : MonoBehaviour
 {
     public Renderer textureRender;
-
+    
+    // apply the color of the map texture
     public void Display2DMap(float[,] map)
     {
         int width = map.GetLength(0);
@@ -17,6 +18,7 @@ public class TerrainDisplay : MonoBehaviour
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++)
             {
+                // 0 mean black, 1 mean white, and lerp method gives normalized grayscale values
                 colorMap[y * width + x] = Color.Lerp(Color.black, Color.white, map[x, y]);
             }
         }
