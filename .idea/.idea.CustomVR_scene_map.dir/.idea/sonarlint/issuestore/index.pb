@@ -15,3 +15,11 @@ X
 (Assets/Scripts/TerrainGeneratorEditor.cs,e/c/ec688b95b3be8b6bc5b45c90dcd95981220cd111
 W
 'Assets/Scripts/TerrainGenerator.cs.meta,1/b/1ba5c1d7a38e64710c4240478640ff3ac99c936f
+[
++Assets/Scripts/TerrainMapGeneratorEditor.cs,8/3/83d38d43c18b438e79bd8fb882121ca28395e977
+U
+%Assets/Scripts/TerrainMapGenerator.cs,b/7/b7b6e2266d25d6edb5f455cb9fc9f7cead434937
+Z
+*Assets/Scripts/TerrainMapGenerator.cs.meta,2/e/2e2298552e8b79473526fd3dc602b41fc2cd2786
+`
+0Assets/Scripts/TerrainMapGeneratorEditor.cs.meta,7/3/739df616a8c0f848136179fd78abda0d63b1eae5

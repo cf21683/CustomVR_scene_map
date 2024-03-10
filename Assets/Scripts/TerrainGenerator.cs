@@ -1,28 +1,27 @@
 using UnityEngine;
-using System.Collections;
 
 public class TerrainGenerator : MonoBehaviour
 {
     public int width = 256;
-    public int height = 256; 
+    public int depth = 256;
+    public int height;
     public float scale = 20f;
 
-    public int octaves;
-    public float persistence;
-    public float lacumarity;
+    public int octaves = 4;
+    public float persistance = 0.5f;
+    public float lacunarity = 2f;
     
-    public bool autoUpdate;
-
-   
-    public void GenerateTerrain()
+    void Start()
     {
-        float[,] perlinMap = PerlinNoise.GenerateMap(width, height, scale,octaves,persistence,lacumarity);
-        
-        TerrainDisplay display = FindObjectOfType<TerrainDisplay>();
-        display.Display2DMap(perlinMap);
-
-
+        Terrain terrain = GetComponent<Terrain>();
+        terrain.terrainData = GenerateTerrain(terrain.terrainData);
     }
-    
-   
+
+    TerrainData GenerateTerrain(TerrainData terrainData)
+    {
+        terrainData.heightmapResolution = width + 1;
+        terrainData.size = new Vector3(width, height, depth);
+        terrainData.SetHeights(0, 0, PerlinNoise.GenerateMap(width, depth, scale, octaves, persistance, lacunarity));
+        return terrainData;
+    }
 }

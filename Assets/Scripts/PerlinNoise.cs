@@ -4,9 +4,9 @@ using System.Collections;
 public static class PerlinNoise
 {
     //generate the perlin noise to create2D map
-    public static float[,] GenerateMap(int width, int height,float scale,int octaves, float persistance, float lacumarity)
+    public static float[,] GenerateMap(int width, int depth,float scale,int octaves, float persistance, float lacumarity)
     {
-        float[,] map = new float[width, height];
+        float[,] map = new float[width, depth];
         float MaxNoiseValue = float.MinValue;
         float MinNoiseValue = float.MaxValue;
         if (scale < 0)
@@ -17,7 +17,7 @@ public static class PerlinNoise
         
         for (int x = 0; x < width; x++)
         {
-            for (int y = 0; y < height; y++)
+            for (int y = 0; y < depth; y++)
             {
                 float amplitude = 1;
                 float frequency = 1;
@@ -54,7 +54,7 @@ public static class PerlinNoise
 
         for (int x = 0; x < width; x++)
         {
-            for (int y = 0; y < height; y++)
+            for (int y = 0; y < depth; y++)
             {
                 // normalize the noise value, the value close to Min value becomes 0 and the value close to Max value becomes 1
                 map[x, y] = Mathf.InverseLerp(MinNoiseValue, MaxNoiseValue, map[x, y]);
